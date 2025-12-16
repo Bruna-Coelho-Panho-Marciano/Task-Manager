@@ -3,6 +3,7 @@ import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
 import Title from "./components/Title";
+import TaskModal from "./components/TaskModal"; // ADICIONE ESTA LINHA
 
 function App() {
   const [tasks, setTasks] = useState(
@@ -14,18 +15,18 @@ function App() {
   }, [tasks]);
 
   useEffect(() => {
-    //const fetchTasks = async () => {
-    //  const response = await fetch(
-    //    "https://jsonplaceholder.typicode.com/todos?_limit=10",
-    //    {
-    //      method: "GET",
-    //    }
-    //  );
-    //  const data = await response.json();
-    //  setTasks(data);
-    //};
+    // const fetchTasks = async () => {
+    //   const response = await fetch(
+    //     "https://jsonplaceholder.typicode.com/todos?_limit=10",
+    //     {
+    //       method: "GET",
+    //     }
+    //   );
+    //   const data = await response.json();
+    //   setTasks(data);
+    // };
     // Se quiser pode chamar uma API para pegar as tarefas
-    //  fetchTasks();
+    // fetchTasks();
   }, []);
 
   function onTaskClick(taskId) {
@@ -44,6 +45,7 @@ function App() {
     setTasks(newTasks);
   }
 
+  // ESTA FUNÇÃO ESTAVA FALTANDO!
   function onAddTaskSubmit(title, description) {
     const newTask = {
       id: v4(),
@@ -58,6 +60,7 @@ function App() {
     <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
       <div className="w-[500px] space-y-4">
         <Title>Gerenciador de Tarefas</Title>
+        {/* ADICIONE onAddTaskSubmit AQUI */}
         <AddTask onAddTaskSubmit={onAddTaskSubmit} />
         <Tasks
           tasks={tasks}
@@ -65,6 +68,9 @@ function App() {
           onDeleteTaskClick={onDeleteTaskClick}
         />
       </div>
+
+      {/* ADICIONE ESTA LINHA - Modal renderizado aqui */}
+      <TaskModal />
     </div>
   );
 }
