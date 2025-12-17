@@ -29,12 +29,12 @@ function AddTask({ onAddTaskSubmit }) {
           setDescription("");
         }}
         className="
-        bg-slate-500 
+        bg-emerald-600 
         text-white 
         px-4 py-2 
         rounded-md 
         font-medium
-        hover:bg-slate-600 
+        hover:bg-emerald-400 
         transition-colors 
         duration-200
         cursor-pointer
