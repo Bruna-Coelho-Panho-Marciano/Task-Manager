@@ -6,11 +6,9 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
   const navigate = useNavigate();
 
   function onSeeDetailsClick(task) {
-    // Tenta usar o modal se estiver disponível
     if (window.openTaskModal) {
       window.openTaskModal(task);
     } else {
-      // Fallback: navega para a página como antes
       const query = new URLSearchParams();
       query.set("title", task.title);
       query.set("description", task.description);
@@ -43,16 +41,12 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
             {task.isCompleted && <CheckIcon />}
             {task.title}
           </button>
-
-          {/* Botão VER DETALHES - atualizado com !important */}
           <Button
             onClick={() => onSeeDetailsClick(task)}
-            className="hover:!bg-green-500 hover:scale-110"
+            className="hover:!bg-emerald-400 hover:scale-110"
           >
             <ChevronRightIcon />
           </Button>
-
-          {/* Botão EXCLUIR - atualizado com !important */}
           <Button
             onClick={() => onDeleteTaskClick(task.id)}
             className="hover:!bg-red-500 hover:scale-110"
