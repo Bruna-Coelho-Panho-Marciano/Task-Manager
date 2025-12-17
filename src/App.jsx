@@ -3,6 +3,7 @@ import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
 import Title from "./components/Title";
+import TaskModal from "./components/TaskModal";
 
 function App() {
   const [tasks, setTasks] = useState(
@@ -14,18 +15,18 @@ function App() {
   }, [tasks]);
 
   useEffect(() => {
-    //const fetchTasks = async () => {
-    //  const response = await fetch(
-    //    "https://jsonplaceholder.typicode.com/todos?_limit=10",
-    //    {
-    //      method: "GET",
-    //    }
-    //  );
-    //  const data = await response.json();
-    //  setTasks(data);
-    //};
+    // const fetchTasks = async () => {
+    //   const response = await fetch(
+    //     "https://jsonplaceholder.typicode.com/todos?_limit=10",
+    //     {
+    //       method: "GET",
+    //     }
+    //   );
+    //   const data = await response.json();
+    //   setTasks(data);
+    // };
     // Se quiser pode chamar uma API para pegar as tarefas
-    //  fetchTasks();
+    // fetchTasks();
   }, []);
 
   function onTaskClick(taskId) {
@@ -65,6 +66,7 @@ function App() {
           onDeleteTaskClick={onDeleteTaskClick}
         />
       </div>
+      <TaskModal />
     </div>
   );
 }
