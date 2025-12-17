@@ -67,7 +67,6 @@ function TaskModal() {
           </div>
 
           <div className="p-6 space-y-6">
-            {/* Status da Tarefa */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 {isCompleted ? (
@@ -95,7 +94,6 @@ function TaskModal() {
               </button>
             </div>
 
-            {/* Título da Tarefa */}
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <div>
@@ -109,7 +107,6 @@ function TaskModal() {
               </p>
             </div>
 
-            {/* Descrição da Tarefa */}
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <div>
