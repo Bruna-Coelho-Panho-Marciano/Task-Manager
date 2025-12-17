@@ -3,7 +3,7 @@ import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
 import Title from "./components/Title";
-import TaskModal from "./components/TaskModal"; // ADICIONE ESTA LINHA
+import TaskModal from "./components/TaskModal";
 
 function App() {
   const [tasks, setTasks] = useState(
@@ -45,7 +45,6 @@ function App() {
     setTasks(newTasks);
   }
 
-  // ESTA FUNÇÃO ESTAVA FALTANDO!
   function onAddTaskSubmit(title, description) {
     const newTask = {
       id: v4(),
@@ -60,7 +59,6 @@ function App() {
     <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
       <div className="w-[500px] space-y-4">
         <Title>Gerenciador de Tarefas</Title>
-        {/* ADICIONE onAddTaskSubmit AQUI */}
         <AddTask onAddTaskSubmit={onAddTaskSubmit} />
         <Tasks
           tasks={tasks}
@@ -68,8 +66,6 @@ function App() {
           onDeleteTaskClick={onDeleteTaskClick}
         />
       </div>
-
-      {/* ADICIONE ESTA LINHA - Modal renderizado aqui */}
       <TaskModal />
     </div>
   );
