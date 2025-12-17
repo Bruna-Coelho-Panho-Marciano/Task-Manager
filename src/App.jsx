@@ -8,14 +8,6 @@ import Title from "./components/Title";
 import TaskModal from "./components/TaskModal";
 import { HashRouter } from "react-router-dom";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
-  </React.StrictMode>
-);
-
 function App() {
   const [tasks, setTasks] = useState(
     JSON.parse(localStorage.getItem("tasks")) || []
@@ -81,5 +73,13 @@ function App() {
     </div>
   );
 }
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <HashRouter>
+      <App />
+    </HashRouter>
+  </React.StrictMode>
+);
 
 export default App;
