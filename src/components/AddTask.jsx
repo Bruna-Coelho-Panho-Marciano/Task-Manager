@@ -38,6 +38,7 @@ function AddTask({ onAddTaskSubmit }) {
         transition-colors 
         duration-200
         cursor-pointer
+        capitalize
       "
       >
         Adicionar
